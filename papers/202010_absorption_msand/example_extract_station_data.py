@@ -71,7 +71,7 @@ for mod in os.listdir(data_dir):
     data = xr.open_dataset(file)[var_name]
 
     print(data.station_name.data)
-    raise Exception
+
     #make sure this is in monthly resolution
     assert data.ts_type == 'monthly'
 
