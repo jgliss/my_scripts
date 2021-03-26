@@ -61,7 +61,9 @@ te.daily = tseries
 # e.g. compute trend for 2005 -> 2015
 trend = te.compute_trend(2005, 2015)
 
-te.plot(season='all')
+ax = te.plot(season='all')
+
+ax.figure.savefig('o3max_trend_first_site_2005-2015.png')
 
 
 
