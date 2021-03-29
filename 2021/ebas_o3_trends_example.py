@@ -23,6 +23,10 @@ reader = pya.io.ReadUngridded('EBASMC', data_dir=data_dir)
 
 conco3 = reader.read(vars_to_retrieve='conco3')
 
+# invalidate EBAS flagged data, and use only EBAS level 2
+conco3 = conco3.apply_filters(set_flags_nan=True,
+                              data_level=2)
+
 all_sites = conco3.to_station_data_all('conco3', start=2000,
                                        stop=2020)
 
